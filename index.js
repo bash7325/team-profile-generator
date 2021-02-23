@@ -6,5 +6,35 @@ const path = require("path");
 const fs = require("fs");
 
 const questions = [
-    
+    {
+        type: 'list', 
+        name: 'role', 
+        message: 'What is your role?',
+        choices: ['Manager', 'Engineer', 'Intern']
+    },
+    {
+        type: 'input',
+        name: 'name', 
+        message: 'What is your name?', 
+    },
+    {
+        type: 'input',
+        name: 'id', 
+        message: 'What is your id?', 
+    },
+    {
+        type: 'input',
+        name: 'email', 
+        message: 'What is your email?', 
+    }, 
 ]
+
+inquirer.prompt(questions).then(employee=>{
+    if (employee.role === 'Manager'){ 
+        createManager(employee); 
+    } else if (employee.role === 'Engineer'){ 
+        createEngineer(employee); 
+    } else {
+        createIntern(employee); 
+    }
+}); 
