@@ -5,6 +5,8 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
+
+const createTeam = () => {
 const questions = [
     {
         type: 'list', 
@@ -38,3 +40,4 @@ inquirer.prompt(questions).then(employee=>{
         createIntern(employee); 
     }
 }); 
+}
