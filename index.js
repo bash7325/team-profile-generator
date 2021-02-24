@@ -41,3 +41,20 @@ inquirer.prompt(questions).then(employee=>{
     }
 }); 
 }
+
+const createManager = employee => {
+
+    const questions = [
+        {
+            type: "input",
+            name: "number",
+            message: "what is your office number?"
+        },
+        {
+            type: "list",
+            name: "addMember",
+            message: "would you like to add another member?",
+            choices: ["yes", "no"]
+        }
+    ]
+}
